@@ -11,20 +11,19 @@
           },
           dist: {
             src: [
-              './vendor/bower/jquery/jquery.js',
-              './vendor/bower/bootstrap/dist/js/bootstrap.js',
-              './vendor/app/assets/javascript/src/main.js'
+              './bower_components/jquery/dist/jquery.js',
+              './bower_components/bootstrap/dist/js/bootstrap.js'
             ],
-            dest: './app/assets/javascript/main.js',
+            dest: './app/assets/javascript/bootstrap.js',
           },
         },
         less: {
-          development: {
+          default: {
             options: {
               compress: true,
             },
             files: {
-              "./public/assets/stylesheets/main-min.css":"./app/assets/stylesheets/src/main.less",
+              "./public/assets/stylesheets/main.min.css":"./app/assets/stylesheets/src/main.less",
             }
           }
         },
@@ -35,15 +34,16 @@
           build: {
             files: {
               './public/assets/javascript/main.min.js': './app/assets/javascript/main.js',
+              './public/assets/javascript/bootstrap.min.js': './app/assets/javascript/bootstrap.js',
             }
           },
         },
         watch: {
           javascript: {
             files: [
-              './vendor/bower/jquery/jquery.js',
-              './vendor/bower/bootstrap/dist/js/bootstrap.js',
-              './vendor/app/assets/javascript/src/main.js'
+              './bower_components/jquery/jquery.js',
+              './bower_components/bootstrap/dist/js/bootstrap.js',
+              './app/assets/javascript/src/main.js'
             ],
             tasks: ['concat:dist','uglify'],
             options: {
@@ -53,6 +53,12 @@
           less: {
             files: ['./app/assets/stylesheets/src/*.less'],
             tasks: ['less'],
+            options: {
+              livereload: true
+            }
+          },
+          html: {
+            files: ['./public/index.htm'],
             options: {
               livereload: true
             }
