@@ -1,7 +1,7 @@
 {
-  "name": "Kickstart",
+  "name": "chatapp",
   "version": "0.0.0",
-  "description": "High Productivity Frontend Development Workflow",
+  "description": "just chatapp",
   "main": "index.js",
   "scripts": {
     "test": "grunt nodetest"
@@ -15,5 +15,9 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "dependencies": {
+    "express": "*"
+  },
+  "engines": {
+    "node": "*"
   }
 }
